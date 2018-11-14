@@ -12,7 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost/todolistsocketio', { useNewUrlParser: true });
+//mongoose.connect('mongodb://localhost/todolistsocketio', { useNewUrlParser: true });
+mongoose.connect('mongodb://user:password1@ds031271.mlab.com:31271/heroku_620cwgw9', { useNewUrlParser: true });
 
 require('./sockets/sockets')(io);
 require('./routes/api-routes')(app);
